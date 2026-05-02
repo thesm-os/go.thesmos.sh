@@ -1,36 +1,85 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>go.thesmos.sh — Go modules</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-           max-width: 720px; margin: 4rem auto; padding: 0 1rem; line-height: 1.55; color: #222; }
-    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-    code { background: #f4f4f4; padding: 0.1rem 0.35rem; border-radius: 3px; font-size: 0.92em; }
-    a { color: #0366d6; text-decoration: none; } a:hover { text-decoration: underline; }
-    .desc { color: #555; font-size: 0.95em; }
-    ul { padding-left: 1.2rem; } li { margin-bottom: 0.6rem; }
-  </style>
-</head>
-<body>
-  <h1>thesmos.sh — Go modules</h1>
-  <p>This host serves the <code>go-import</code> meta tags that let
-     <code>go get</code> resolve thesmos vanity import paths.
-     The actual sources live on
-     <a href="https://github.com/thesmos-ai">github.com/thesmos-ai</a>.</p>
+    <head>
+        <meta charset="utf-8" />
+        <title>go.thesmos.sh — Go modules</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+            body {
+                font-family:
+                    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+                    sans-serif;
+                max-width: 720px;
+                margin: 4rem auto;
+                padding: 0 1rem;
+                line-height: 1.55;
+                color: #222;
+            }
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            code {
+                background: #f4f4f4;
+                padding: 0.1rem 0.35rem;
+                border-radius: 3px;
+                font-size: 0.92em;
+            }
+            a {
+                color: #0366d6;
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .desc {
+                color: #555;
+                font-size: 0.95em;
+            }
+            ul {
+                padding-left: 1.2rem;
+            }
+            li {
+                margin-bottom: 0.6rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>thesmos.sh — Go modules</h1>
+        <p>
+            This host serves the <code>go-import</code> meta tags that let
+            <code>go get</code> resolve thesmos vanity import paths. The actual
+            sources live on
+            <a href="https://github.com/thesmos-ai">github.com/thesmos-ai</a>.
+        </p>
 
-  <h2>Modules</h2>
-  <ul>
-    <li>
-      <a href="/thesmos/"><code>go.thesmos.sh/thesmos</code></a>
-      <div class="desc">thesmos core.</div>
-    </li>
-    <li>
-      <a href="/protoc-gen-codec/"><code>go.thesmos.sh/protoc-gen-codec</code></a>
-      <div class="desc">protoc plugin emitting binary serialization methods on hand-written Go types.</div>
-    </li>
-  </ul>
-</body>
+        <h2>Modules</h2>
+        <ul>
+            <li>
+                <a href="/thesmos/"><code>go.thesmos.sh/thesmos</code></a>
+                <div class="desc">thesmos core.</div>
+            </li>
+            <li>
+                <a href="/testkit/">
+                    <code>go.thesmos.sh/testkit</code>
+                </a>
+                <div class="desc">thesmos testkit.</div>
+            </li>
+            <li>
+                <a href="/thesmos-tools/">
+                    <code>go.thesmos.sh/thesmos-tools</code>
+                </a>
+                <div class="desc">thesmos core.</div>
+            </li>
+            <li>
+                <a href="/protoc-gen-codec/"
+                    ><code>go.thesmos.sh/protoc-gen-codec</code></a
+                >
+                <div class="desc">
+                    protoc plugin emitting binary serialization methods on
+                    hand-written Go types.
+                </div>
+            </li>
+        </ul>
+    </body>
 </html>
