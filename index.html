@@ -4,82 +4,544 @@
         <meta charset="utf-8" />
         <title>go.thesmos.sh — Go modules</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>
-            body {
-                font-family:
-                    -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-                    sans-serif;
-                max-width: 720px;
-                margin: 4rem auto;
-                padding: 0 1rem;
-                line-height: 1.55;
-                color: #222;
-            }
-            h1 {
-                font-size: 1.5rem;
-                margin-bottom: 0.5rem;
-            }
-            code {
-                background: #f4f4f4;
-                padding: 0.1rem 0.35rem;
-                border-radius: 3px;
-                font-size: 0.92em;
-            }
-            a {
-                color: #0366d6;
-                text-decoration: none;
-            }
-            a:hover {
-                text-decoration: underline;
-            }
-            .desc {
-                color: #555;
-                font-size: 0.95em;
-            }
-            ul {
-                padding-left: 1.2rem;
-            }
-            li {
-                margin-bottom: 0.6rem;
-            }
-        </style>
+        <meta
+            name="description"
+            content="Vanity import host for the thesmos Go ecosystem. Modules resolve from go.thesmos.sh to github.com/thesmos-ai."
+        />
+        <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com"
+            crossorigin
+        />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/assets/site.css" />
     </head>
     <body>
-        <h1>thesmos.sh — Go modules</h1>
-        <p>
-            This host serves the <code>go-import</code> meta tags that let
-            <code>go get</code> resolve thesmos vanity import paths. The actual
-            sources live on
-            <a href="https://github.com/thesmos-ai">github.com/thesmos-ai</a>.
-        </p>
+        <main class="shell">
+            <header class="hero">
+                <div class="eyebrow">go.thesmos.sh</div>
+                <h1>
+                    Go modules for the
+                    <span class="accent">thesmos</span> ecosystem.
+                </h1>
+                <p>
+                    Vanity import host serving <code>go-import</code> meta tags
+                    so <code>go get</code> resolves
+                    <code>go.thesmos.sh/&lt;module&gt;</code> to the canonical
+                    sources at
+                    <a href="https://github.com/thesmos-ai"
+                        >github.com/thesmos-ai</a
+                    >.
+                </p>
+            </header>
 
-        <h2>Modules</h2>
-        <ul>
-            <li>
-                <a href="/thesmos/"><code>go.thesmos.sh/thesmos</code></a>
-                <div class="desc">thesmos core.</div>
-            </li>
-            <li>
-                <a href="/testkit/">
-                    <code>go.thesmos.sh/testkit</code>
-                </a>
-                <div class="desc">thesmos testkit.</div>
-            </li>
-            <li>
-                <a href="/thesmos-tools/">
-                    <code>go.thesmos.sh/thesmos-tools</code>
-                </a>
-                <div class="desc">thesmos core.</div>
-            </li>
-            <li>
-                <a href="/protoc-gen-codec/"
-                    ><code>go.thesmos.sh/protoc-gen-codec</code></a
-                >
-                <div class="desc">
-                    protoc plugin emitting binary serialization methods on
-                    hand-written Go types.
-                </div>
-            </li>
-        </ul>
+            <h2 class="section-title">Public modules</h2>
+            <ul class="modules" style="list-style: none; padding: 0; margin: 0">
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span
+                            >protoc-gen-codec
+                        </div>
+                        <div class="tags">
+                            <span class="tag public">public</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        High-performance protobuf codec for Go. Emits
+                        marshal/unmarshal on your hand-written types instead of
+                        generating new ones. Zero-alloc, deterministic, 100%
+                        mutation-tested.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/protoc-gen-codec"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd"
+                                >go get go.thesmos.sh/protoc-gen-codec</span
+                            >
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/protoc-gen-codec"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>testkit
+                        </div>
+                        <div class="tags">
+                            <span class="tag public">public</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        High-integrity testing for Go. You write domain logic.
+                        Testkit generates the plumbing, the tests, and the proof
+                        that it all works.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/testkit"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd"
+                                >go get go.thesmos.sh/testkit</span
+                            >
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/testkit"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 class="section-title">Private modules</h2>
+            <ul class="modules" style="list-style: none; padding: 0; margin: 0">
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>thesmos
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        The operating system for autonomous AI agents.
+                        Deterministic execution kernel with cryptographic audit
+                        trails, built for 100k+ concurrent agents.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/thesmos"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd"
+                                >go get go.thesmos.sh/thesmos</span
+                            >
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/thesmos"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>core
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        Shared primitives and contracts for the thesmos runtime.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/core"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd">go get go.thesmos.sh/core</span>
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/core"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>kernel
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        Deterministic execution kernel — agent scheduling and
+                        replay.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/kernel"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd">go get go.thesmos.sh/kernel</span>
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/kernel"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>runtime
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        Runtime services and orchestration for the thesmos
+                        kernel.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/runtime"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd"
+                                >go get go.thesmos.sh/runtime</span
+                            >
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/runtime"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span>ledger
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        Append-only audit trail with cryptographic verification.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/ledger"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd">go get go.thesmos.sh/ledger</span>
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/ledger"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+
+                <li class="module">
+                    <div class="module-head">
+                        <div class="module-name">
+                            <span class="host">go.thesmos.sh/</span
+                            >thesmos-tools
+                        </div>
+                        <div class="tags">
+                            <span class="tag private">private</span>
+                            <span class="tag">go</span>
+                            <span class="tag">rust</span>
+                            <span class="tag">ts</span>
+                        </div>
+                    </div>
+                    <p class="module-desc">
+                        MCP tools for agentic usage — Go, Rust, TypeScript, and
+                        filesystem helpers.
+                    </p>
+                    <div class="module-foot">
+                        <button
+                            type="button"
+                            class="go-get"
+                            data-copy="go get go.thesmos.sh/thesmos-tools"
+                            title="Copy to clipboard"
+                        >
+                            <span class="cmd"
+                                >go get go.thesmos.sh/thesmos-tools</span
+                            >
+                            <svg
+                                class="copy-icon"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <rect
+                                    x="9"
+                                    y="9"
+                                    width="13"
+                                    height="13"
+                                    rx="2"
+                                    ry="2"
+                                ></rect>
+                                <path
+                                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                ></path>
+                            </svg>
+                        </button>
+                        <a
+                            class="gh-link"
+                            href="https://github.com/thesmos-ai/thesmos-tools"
+                        >
+                            <svg viewBox="0 0 16 16" fill="currentColor">
+                                <path
+                                    d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                                ></path>
+                            </svg>
+                            github
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="note">
+                Private modules require auth on
+                <code>go get</code>. Configure once:
+                <code>go env -w GOPRIVATE=go.thesmos.sh/*</code> and ensure your
+                git credentials can reach <code>github.com/thesmos-ai</code>.
+            </div>
+
+            <footer>
+                <span>
+                    <a href="https://github.com/thesmos-ai/go.thesmos.sh"
+                        >source</a
+                    >
+                    · vanity host for thesmos
+                </span>
+                <span>thesmos.sh</span>
+            </footer>
+        </main>
+        <script src="/assets/site.js"></script>
     </body>
 </html>
