@@ -1,0 +1,55 @@
+{{- define "index" -}}
+<!doctype html>
+<html lang="en">
+    <head>
+        {{template "head" .}}
+        <meta name="description" content="Vanity import host for the thesmos Go ecosystem. Modules resolve from go.thesmos.sh to github.com/thesmos-ai." />
+    </head>
+    <body>
+        <main class="shell">
+            <header class="hero">
+                <div class="eyebrow">go.thesmos.sh</div>
+                <h1>
+                    Go modules for the
+                    <span class="accent">thesmos</span> ecosystem.
+                </h1>
+                <p>
+                    Vanity import host serving <code>go-import</code> meta tags
+                    so <code>go get</code> resolves
+                    <code>go.thesmos.sh/&lt;module&gt;</code> to the canonical
+                    sources at
+                    <a href="https://github.com/thesmos-ai">github.com/thesmos-ai</a>.
+                </p>
+            </header>
+
+{{if .Public}}
+            <h2 class="section-title">Public modules</h2>
+            <ul class="modules" style="list-style: none; padding: 0; margin: 0">
+{{range .Public}}{{template "module-card" .}}
+{{end}}            </ul>
+{{end}}
+{{if .Private}}
+            <h2 class="section-title">Private modules</h2>
+            <ul class="modules" style="list-style: none; padding: 0; margin: 0">
+{{range .Private}}{{template "module-card" .}}
+{{end}}            </ul>
+{{end}}
+            <div class="note">
+                Private modules require auth on <code>go get</code>. Configure
+                once: <code>go env -w GOPRIVATE=go.thesmos.sh/*</code> and
+                ensure your git credentials can reach
+                <code>github.com/thesmos-ai</code>.
+            </div>
+
+            <footer>
+                <span>
+                    <a href="https://github.com/thesmos-ai/go.thesmos.sh">source</a>
+                    · vanity host for thesmos
+                </span>
+                <span>thesmos.ai</span>
+            </footer>
+        </main>
+        <script src="/assets/site.js"></script>
+    </body>
+</html>
+{{- end -}}
