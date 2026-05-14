@@ -67,16 +67,6 @@ func (s Sub) Languages() []string {
 	return s.Langs
 }
 
-func (s Sub) GoSource() string {
-	base := s.parent.RepoURL()
-	return strings.Join([]string{
-		s.ImportPath(),
-		"    " + base + "/tree/main/" + s.Name,
-		"    " + base + "/tree/main/" + s.Name + "{/dir}",
-		"    " + base + "/blob/main/" + s.Name + "{/dir}/{file}#L{line}",
-	}, "\n")
-}
-
 // modules is the source of truth for the site. Edit this slice and re-run
 // `go run ./_gen` from the repo root.
 var modules = []Module{

@@ -71,10 +71,16 @@ func main() {
 			Module:   m,
 		})
 		for _, s := range m.Subs {
+			// Emit the parent module's meta tag at every submodule path.
+			// Go's resolver treats the meta-tag's import-prefix as the repo's
+			// root module; the trailing URL segments are matched against
+			// nested go.mod paths inside the repo. Emitting the submodule's
+			// own path as import-prefix tricks Go into reading the repo-root
+			// go.mod, which declares the parent module → path mismatch error.
 			render(root, track(filepath.Join(m.Name, s.Name, "index.html")), "submodule", subPage{
 				Title:    "go.thesmos.sh/" + m.Name + "/" + s.Name,
-				GoImport: s.ImportPath() + " git " + m.RepoURL(),
-				GoSource: s.GoSource(),
+				GoImport: m.ImportPath() + " git " + m.RepoURL(),
+				GoSource: m.GoSource(),
 				Sub:      s,
 			})
 		}
