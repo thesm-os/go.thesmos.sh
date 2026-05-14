@@ -133,6 +133,11 @@ var modules = []Module{
 		Public:      true,
 	},
 	{
+		Name:        "techne",
+		Description: "Atomic, build-gated developer tools for AI coding agents: type-checked refactors, semantic search, and verify→fix loops over MCP, CLI, and TUI.",
+		Public:      true,
+	},
+	{
 		Name:        "testkit",
 		Description: "High-integrity testing for Go. You write domain logic. Testkit generates the plumbing, the tests, and the proof that it all works.",
 		Public:      true,
