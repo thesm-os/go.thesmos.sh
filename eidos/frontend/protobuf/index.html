@@ -2,19 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>go.thesmos.sh/thesmos-tools</title>
+    <title>go.thesmos.sh/eidos/frontend/protobuf</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <meta
       name="go-import"
-      content="go.thesmos.sh/thesmos-tools git https://github.com/thesm-os/thesmos-tools"
+      content="go.thesmos.sh/eidos/frontend/protobuf git https://github.com/thesm-os/eidos"
     />
     <meta
       name="go-source"
-      content="go.thesmos.sh/thesmos-tools
-    https://github.com/thesm-os/thesmos-tools
-    https://github.com/thesm-os/thesmos-tools/tree/main{/dir}
-    https://github.com/thesm-os/thesmos-tools/blob/main{/dir}/{file}#L{line}"
+      content="go.thesmos.sh/eidos/frontend/protobuf
+    https://github.com/thesm-os/eidos/tree/main/frontend/protobuf
+    https://github.com/thesm-os/eidos/tree/main/frontend/protobuf{/dir}
+    https://github.com/thesm-os/eidos/blob/main/frontend/protobuf{/dir}/{file}#L{line}"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
@@ -28,29 +28,33 @@
   <body>
     <main class="shell">
       <header class="hero">
-        <div class="eyebrow"><a href="/">go.thesmos.sh</a> / thesmos-tools</div>
-        <h1><span class="accent">thesmos-tools</span></h1>
+        <div class="eyebrow">
+          <a href="/">go.thesmos.sh</a> / <a href="/eidos/">eidos</a> /
+          frontend/protobuf
+        </div>
+        <h1><span class="accent">eidos/frontend/protobuf</span></h1>
         <p>
-          MCP tools for agentic usage — Go, Rust, TypeScript, and filesystem
-          helpers.
+          Protobuf frontend for eidos — parses .proto descriptors into the typed
+          IR.
         </p>
       </header>
 
       <section class="card">
         <div class="tags" style="margin-bottom: 1rem">
-          <span class="tag private">private</span>
+          <span class="tag public">public</span>
           <span class="tag">go</span>
-          <span class="tag">rust</span>
-          <span class="tag">ts</span>
+          <span class="tag">submodule</span>
         </div>
         <div class="actions">
           <button
             type="button"
             class="go-get btn"
-            data-copy="go get go.thesmos.sh/thesmos-tools"
+            data-copy="go get go.thesmos.sh/eidos/frontend/protobuf"
             title="Copy to clipboard"
           >
-            <span class="cmd">go get go.thesmos.sh/thesmos-tools</span>
+            <span class="cmd"
+              >go get go.thesmos.sh/eidos/frontend/protobuf</span
+            >
             <svg
               class="copy-icon"
               viewBox="0 0 24 24"
@@ -68,7 +72,7 @@
           </button>
           <a
             class="btn primary"
-            href="https://github.com/thesm-os/thesmos-tools"
+            href="https://github.com/thesm-os/eidos/tree/main/frontend/protobuf"
           >
             <svg viewBox="0 0 16 16" fill="currentColor">
               <path
@@ -77,15 +81,16 @@
             </svg>
             view on github
           </a>
-        </div>
-        <div class="note">
-          Private module. Configure once:
-          <code>go env -w GOPRIVATE=go.thesmos.sh/*</code>
+          <a
+            class="btn"
+            href="https://pkg.go.dev/go.thesmos.sh/eidos/frontend/protobuf"
+            >pkg.go.dev</a
+          >
         </div>
       </section>
 
       <footer>
-        <span><a href="/">← all modules</a></span>
+        <span><a href="/eidos/">← eidos</a></span>
         <span>thesmos.sh</span>
       </footer>
     </main>

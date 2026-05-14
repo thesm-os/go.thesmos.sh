@@ -2,7 +2,7 @@ package main
 
 import "strings"
 
-const repoOrg = "thesmos-ai"
+const repoOrg = "thesm-os"
 
 // Module describes a top-level vanity module exposed at go.thesmos.sh/<Name>.
 // The repo is assumed to be github.com/<repoOrg>/<Name>.
@@ -80,6 +80,53 @@ func (s Sub) GoSource() string {
 // modules is the source of truth for the site. Edit this slice and re-run
 // `go run ./_gen` from the repo root.
 var modules = []Module{
+	{
+		Name:        "eidos",
+		Description: "A composable, plugin-driven code-generation framework. Typed metadata, queryable IR, slot injection, byte-deterministic output.",
+		Public:      true,
+		Subs: []Sub{
+			{
+				Name:        "backend/golang",
+				Description: "Go emitter for eidos — renders the IR back to deterministic Go source.",
+				Public:      true,
+			},
+			{
+				Name:        "bridge/protogo",
+				Description: "Protobuf↔Go bridge for eidos — interop between the two frontends.",
+				Public:      true,
+			},
+			{
+				Name:        "cli",
+				Description: "Command-line driver for eidos pipelines.",
+				Public:      true,
+			},
+			{
+				Name:        "eidostest",
+				Description: "Plugin test harness for eidos — golden-output and byte-determinism checks.",
+				Public:      true,
+			},
+			{
+				Name:        "frontend/golang",
+				Description: "Go source frontend for eidos — parses Go into the typed IR.",
+				Public:      true,
+			},
+			{
+				Name:        "frontend/protobuf",
+				Description: "Protobuf frontend for eidos — parses .proto descriptors into the typed IR.",
+				Public:      true,
+			},
+			{
+				Name:        "reference",
+				Description: "Reference plugin and worked-example pipeline for eidos.",
+				Public:      true,
+			},
+		},
+	},
+	{
+		Name:        "ergon",
+		Description: "Task runner for Go projects: format, lint, test, benchmark, release, with a multi-stage check umbrella.",
+		Public:      true,
+	},
 	{
 		Name:        "protoc-gen-codec",
 		Description: "High-performance protobuf codec for Go. Emits marshal/unmarshal on your hand-written types instead of generating new ones. Zero-alloc, deterministic, 100% mutation-tested.",
