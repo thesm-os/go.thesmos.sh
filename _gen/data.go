@@ -91,6 +91,11 @@ var modules = []Module{
 				Public:      true,
 			},
 			{
+				Name:        "cmd/eidos-reference",
+				Description: "Reference-runner binary for eidos — exercises the reference plugin pipeline end-to-end.",
+				Public:      true,
+			},
+			{
 				Name:        "eidostest",
 				Description: "Plugin test harness for eidos — golden-output and byte-determinism checks.",
 				Public:      true,
@@ -103,6 +108,11 @@ var modules = []Module{
 			{
 				Name:        "frontend/protobuf",
 				Description: "Protobuf frontend for eidos — parses .proto descriptors into the typed IR.",
+				Public:      true,
+			},
+			{
+				Name:        "plugins",
+				Description: "Bundled plugin set for eidos pipelines.",
 				Public:      true,
 			},
 			{
