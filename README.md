@@ -49,23 +49,27 @@ skip if npx isn't available.
 ## Submodules (nested go.mod)
 
 When a module has its own nested `go.mod` (e.g. `eidos/cli/go.mod` declaring
-`module go.thesmos.sh/eidos/cli`), the vanity host emits an **explicit
-`go-import` meta tag** at the submodule path, with the parent repo as
-repo-root:
+`module go.thesmos.sh/eidos/cli`), the vanity host serves a page at the
+submodule path with the **parent's** `go-import` meta tag:
 
 ```html
 <meta name="go-import"
-      content="go.thesmos.sh/eidos/cli git https://github.com/thesm-os/eidos" />
+      content="go.thesmos.sh/eidos git https://github.com/thesm-os/eidos" />
 ```
 
-Go's tooling then clones the parent repo and locates the nested `go.mod` by
-matching the declared module path. Multi-segment submodule names (e.g.
-`frontend/golang`) are written verbatim in the `Sub.Name` field.
+The import prefix is the path of the repository's root module. Go clones the
+repository and matches the rest of the import path against its nested
+`go.mod` files. With the submodule's path as the prefix, Go reads the root
+`go.mod` instead. `go get` then fails with a module path mismatch, because
+that file declares the parent module.
+
+Multi-segment submodule names (e.g. `lang/golang`) are written verbatim in the
+`Sub.Name` field.
 
 ```go
 Subs: []Sub{
     {Name: "cli", Description: "...", Public: true},
-    {Name: "frontend/golang", Description: "...", Public: true},
+    {Name: "lang/golang", Description: "...", Public: true},
 },
 ```
 
