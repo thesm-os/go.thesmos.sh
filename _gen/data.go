@@ -128,6 +128,11 @@ var modules = []Module{
 		Public:      true,
 	},
 	{
+		Name:        "kanon",
+		Description: "kanon generates binary codecs for Go struct types. Equal values encode to identical bytes. Decoded strings can share memory with the input buffer.",
+		Public:      true,
+	},
+	{
 		Name:        "protoc-gen-codec",
 		Description: "High-performance protobuf codec for Go. Emits marshal/unmarshal on your hand-written types instead of generating new ones. Zero-alloc, deterministic, 100% mutation-tested.",
 		Public:      true,
@@ -165,14 +170,48 @@ var modules = []Module{
 	{
 		Name:        "kernel",
 		Description: "Deterministic execution kernel — agent scheduling and replay.",
+		Public:      true,
 	},
 	{
 		Name:        "ledger",
 		Description: "Append-only audit trail with cryptographic verification.",
+		Public:      true,
+		Subs: []Sub{
+			{
+				Name:        "cmd",
+				Description: "ledger-verify verifies a ledger offline and monitors its published objects. ledger-witness runs a C2SP tlog-witness that cosigns the ledger's checkpoints.",
+				Public:      true,
+			},
+			{
+				Name:        "pkg/evidence",
+				Description: "The evidence module contains the ledger's persisted formats, witnessing, timestamping and verification.",
+				Public:      true,
+			},
+			{
+				Name:        "pkg/pkcs11",
+				Description: "The pkcs11 module implements core's sign.Signer and crypto.Keeper with keys in a PKCS#11 device. Private signing keys and key-encryption keys never leave the device.",
+				Public:      true,
+			},
+			{
+				Name:        "pkg/qualified",
+				Description: "The qualified module contains the eIDAS trust services: AdES seals, trusted lists, and OCSP and CRL clients.",
+				Public:      true,
+			},
+			{
+				Name:        "pkg/storage/s3",
+				Description: "The s3 module implements core's blob.Store for S3-compatible object storage, with ranged reads and Object Lock retention.",
+				Public:      true,
+			},
+		},
 	},
 	{
 		Name:        "runtime",
 		Description: "Runtime services and orchestration for the thesmos kernel.",
+	},
+	{
+		Name:        "sharder",
+		Description: "sharder assigns the shards of a service to its processes and moves ownership between them through fenced handoffs. Each namespace selects its partitioning and placement strategies and its replica state model.",
+		Public:      true,
 	},
 	{
 		Name:        "thesmos-tools",
